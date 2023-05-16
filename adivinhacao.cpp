@@ -10,16 +10,24 @@ class JogoAdivinhacao {
       int tentativas;
     
     public:
+      // Construtor da classe
       JogoAdivinhacao() {
           
+        // Inicializa o gerador de números aleatórios com o tempo atual
         srand(time(0));
+        
+        // Gera um número aleatório entre 1 e 100 e armazena na variável numerosecreto
         numerosecreto = rand () % 100 + 1;
+        
+        // Inicializa a variável tentativas com 0
         tentativas = 0;
       }
       
     void jogar () {
         
       int palpite;
+      
+      // Repete o loop até o palpite ser igual ao número secreto
       do {
          cout << "Digite um numero entre 1 e 100: ";
          cin >> palpite;
@@ -38,9 +46,11 @@ class JogoAdivinhacao {
 };
 
 int main() {
+    // Cria uma instância da classe JogoAdivinhacao
     JogoAdivinhacao jogo;
+    
+    // Chama o método jogar da instância criada
     jogo.jogar();
+    
     return 0;
 }
-    
-/* Acredito que o construtor possa ser utilizado em jogos para passar os parametros e estruturas de um objeto do jogo*/
